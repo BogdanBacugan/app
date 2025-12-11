@@ -23,6 +23,21 @@ class HomeFragment : Fragment() {
         val btnIssueBook = view.findViewById<Button>(R.id.btnIssueBook)
         val btnStats = view.findViewById<Button>(R.id.btnStats) // новая кнопка
 
+        // В HomeFragment.kt, в onCreateView, после нахождения кнопок:
+        val btnReturnBook = view.findViewById<Button>(R.id.btnReturnBook)
+
+// Обработчик для кнопки возврата книги
+        btnReturnBook?.setOnClickListener {
+            Toast.makeText(requireContext(),
+                "Переход к возврату книги",
+                Toast.LENGTH_SHORT).show()
+
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ReturnBookFragment())
+                .addToBackStack("home")
+                .commit()
+        }
+
         // Обработчики кнопок
         btnRegisterReader?.setOnClickListener {
             Toast.makeText(requireContext(),
@@ -48,11 +63,11 @@ class HomeFragment : Fragment() {
 
         btnIssueBook?.setOnClickListener {
             Toast.makeText(requireContext(),
-                "Переход на выдачу книги",
+                "Переход к выдаче книги",
                 Toast.LENGTH_SHORT).show()
 
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, IssueBookFragment())
+                .replace(R.id.fragment_container, IssueBookFragment()) // Новый фрагмент!
                 .addToBackStack("home")
                 .commit()
         }

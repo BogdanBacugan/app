@@ -41,13 +41,21 @@
         android:text="Выдать книгу"
         app:layout_constraintTop_toBottomOf="@id/btnRegisterBook" />
 
-    <!-- НОВАЯ КНОПКА СТАТИСТИКИ -->
+    <!-- НОВАЯ КНОПКА: Вернуть книгу -->
+    <Button
+        android:id="@+id/btnReturnBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Вернуть книгу"
+        app:layout_constraintTop_toBottomOf="@id/btnIssueBook" />
+
     <Button
         android:id="@+id/btnStats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Статистика библиотеки"
-        app:layout_constraintTop_toBottomOf="@id/btnIssueBook" />
+        app:layout_constraintTop_toBottomOf="@id/btnReturnBook" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
